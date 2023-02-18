@@ -1,0 +1,23 @@
+h1 {
+  margin-top: 145px;
+  line-height: 100%;
+  span {
+    color: #4DDFBC;
+  }
+}
+.wrapper_cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 267px);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+  @media (max-width: 1195px) {
+    grid-template-columns: repeat(auto-fill, 320px);
+  }
+}
+.wrapper_filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 33px;
+}

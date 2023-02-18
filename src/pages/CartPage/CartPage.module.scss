@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 145px;
+  .clear {
+    display: flex;
+    align-items: center;
+    margin-top: 90px;
+    span {
+      text-decoration: underline;
+      cursor: pointer;
+      margin-right: 12px;
+    }
+  }
+}
+.total_wrapper {
+  display: flex;
+  margin-top: 54px;
+  span {
+    font-size: 24px;
+  }
+  .want {
+    span {
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+  }
+  .total {
+    margin-left: auto;
+    span {
+      color: var(--primary-color);
+      font-weight: bold;
+      margin-left: 20px;
+    }
+  }
+}

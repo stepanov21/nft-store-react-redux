@@ -1,0 +1,75 @@
+.tilt {
+  width: 267px;
+  height: 100%;
+  transition: all 0.5s ease;
+}
+
+
+.wrapper {
+  position: relative;
+  width: 267px;
+  padding: 24px;
+  background: radial-gradient(62.71% 76.27% at -10.1% -10.48%, #323232 0%, #262828 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  @media (max-width: 1195px) {
+    width: 320px;
+  }
+  .img {
+    overflow: hidden;
+    img {
+      border-radius: 10px;
+      width: 100%;
+    }
+  }
+  .descr {
+    margin-top: 12px;
+    display: flex;
+    div {
+      font-size: 20px;
+    }
+    .price {
+      margin-left: auto;
+      font-weight: 700;
+    }
+  }
+  .postDescr {
+    margin-top: 4px;
+    display: flex;
+    div {
+      font-size: 12px;
+    }
+    .author {
+      margin-right: auto;
+      span {
+        color: var(--primary-color);
+      }
+    }
+  }
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    width: 100%;
+    padding: 8px 0px;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    border: none;
+    font-weight: 700;
+    transition: all .5s ease;
+    border: 3px solid var(--primary-color);
+    &:hover {
+      background: transparent;
+      color: var(--primary-color);
+      border: 3px solid var(--primary-color);
+    }
+  }
+  .checked {
+    background: transparent;
+    color: var(--primary-color);
+    svg {
+      margin-right: 10px;
+    }
+  }
+}

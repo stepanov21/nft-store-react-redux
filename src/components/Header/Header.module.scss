@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 33px;
+  img {
+    height: 68px;
+  }
+  ul {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+    list-style: none;
+    a {
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+    }
+  }
+  .icons {
+    .heart {
+      margin: 0 30px;
+    }
+  }
+}
+
+

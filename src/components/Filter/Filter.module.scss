@@ -1,0 +1,60 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  svg {
+    cursor: pointer;
+    transition: all .8s ease-in;
+  }
+  .filter {
+    margin-left: 16px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    svg {
+      margin-right: 12px;
+    }
+    span {
+      font-size: 24px;
+      &:last-child {
+        color: var(--primary-color);
+        margin-left: 40px;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  ul {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 180px;
+    height: 168px;
+    border: 3px solid var(--primary-color);
+    background: radial-gradient(
+        62.71% 76.27% at -10.1% -10.48%,
+        #323232 0%,
+        #262828 100%
+      ),
+      #d9d9d9;
+    border-radius: 15px;
+    z-index: 100;
+    li {
+      list-style: none;
+      font-size: 24px;
+      color: var(--primary-color);
+    }
+  }
+}
+.active {
+  text-decoration: underline;
+}
+.dirAnim {
+  transform: rotate(180deg);
+}
