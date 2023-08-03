@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 
 
-type TCartItem = {
+export type TCartItem = {
   id: string;
   imgUrl: string;
   order: number;
@@ -17,7 +17,7 @@ interface ICart {
 }
 
 const initialState: ICart = {
-  items: [],
+  items: JSON.parse(localStorage.getItem('cart') as string) || [],
   totalPrice: 0
 }
 
@@ -30,14 +30,17 @@ export const cartSlice = createSlice({
       if(state.items.find(item => item.id === action.payload.id))return;
       state.items.push(action.payload);
       getTotal(state)
+      localStorage.setItem('cart', JSON.stringify(state.items))
     },
     deleteFromCart: (state, action) => {
       state.items = state.items.filter(item => item.id !== action.payload)
       getTotal(state)
+      localStorage.setItem('cart', JSON.stringify(state.items))
     },
     clearAllCart: (state) => {
       state.items = []
       getTotal(state)
+      localStorage.removeItem('cart')
     }
   }
 })

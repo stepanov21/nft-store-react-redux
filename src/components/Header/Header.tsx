@@ -1,5 +1,7 @@
 import React, { memo } from "react"
+import { useSelector } from "react-redux"
 import { Link, NavLink } from "react-router-dom"
+import { cartSelector } from "../../redux/slice/cartSlice"
 import style from "./Header.module.scss"
 
 const navs = [
@@ -19,6 +21,7 @@ const navs = [
 
 const Header: React.FC = () => {
   let activeClassName = { color: "var(--primary-color)" }
+  const { items } = useSelector(cartSelector)
 
   const isActiveLink = ({ isActive }: { isActive: boolean }) =>
     isActive ? activeClassName : undefined
@@ -85,6 +88,7 @@ const Header: React.FC = () => {
               stroke-linejoin='round'
             />
           </svg>
+          <div>{items.length}</div>
         </Link>
       </div>
     </header>
