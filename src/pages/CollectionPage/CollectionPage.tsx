@@ -17,20 +17,17 @@ import Pagination from "../../components/Pagination/Pagination";
 
 const CollectionPage: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { items: nfts, isLoading, page} = useSelector(selectNfts);
+  const { items: nfts, isLoading, page } = useSelector(selectNfts);
 
   const search = useSelector(searchSelector);
 
   const { filter, direction } = useSelector(selectFilter);
 
-  const filterArr = ["order", "price", "views"];
-  const derectionArr = ["desc", "asc"];
-
   useEffect(() => {
     dispatch(
       fetchNft({
-        filter: filterArr[filter],
-        direction: derectionArr[direction],
+        filter,
+        direction,
         search,
       })
     );
@@ -48,13 +45,13 @@ const CollectionPage: React.FC = () => {
       <div className={style.wrapper_cards}>
         {isLoading
           ? nfts
-            .slice(0+(page * 4), 4+(page * 4))
+            .slice(0 + (page * 8), 8 + (page * 8))
             .map((item: TNft) => {
               return <NFTItem {...item} />;
             })
           : [...Array(4)].map((item) => <Loading />)}
       </div>
-      <Pagination items={nfts?.length} maxItemsOnPage={4}/>
+      <Pagination items={nfts?.length} maxItemsOnPage={8} />
     </>
   );
 };

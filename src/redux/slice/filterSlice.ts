@@ -1,28 +1,31 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../store'
 
-interface IFilter {
-  filter: number;
-  direction: number;
+export type TFilterValues = "order" | "price" | "views"
+export type TDirecValues = "desc" | "asc"
+
+export interface IFilter {
+  filter: TFilterValues;
+  direction: TDirecValues;
 }
 
 const initialState: IFilter = {
-  filter: 0,
-  direction: 0
+  filter: "order",
+  direction: "desc"
 }
 
 export const filterSlice = createSlice({
   name: 'filter',
   initialState,
   reducers: {
-    setFilter: (state, action) => {
-      state.filter = action.payload
+    setFilter: (state, action:PayloadAction<TFilterValues>) => {
+      state.filter = action.payload;
     },
     toggleDirection: (state) => {
-      if (state.direction === 0) {
-        state.direction = 1
+      if (state.direction === 'desc') {
+        state.direction = 'asc'
       } else {
-        state.direction = 0
+        state.direction = 'desc'
       }
     }
   }

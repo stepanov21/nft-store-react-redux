@@ -16,6 +16,7 @@
     }
     span {
       font-size: 24px;
+      text-transform: capitalize;
       &:last-child {
         color: var(--primary-color);
         margin-left: 40px;
@@ -49,6 +50,7 @@
       list-style: none;
       font-size: 24px;
       color: var(--primary-color);
+      text-transform: capitalize;
     }
   }
 }

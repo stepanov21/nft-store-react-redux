@@ -12,7 +12,7 @@ export const fetchNft = createAsyncThunk(
   'nft/fetchNft',
   async (params: TParams) => {
     const {filter, direction, search} = params;
-    const { data } = await axios.get(`https://63d0fdd8120b32bbe8eeaa66.mockapi.io/nfts/?sortBy=${filter}&order=${direction}&search=${search}`)
+    const { data }: {data: TNft[]} = await axios.get(`https://63d0fdd8120b32bbe8eeaa66.mockapi.io/nfts/?sortBy=${filter}&order=${direction}&search=${search}`)
     return data
   }
 )
@@ -37,7 +37,7 @@ const initialState: INft = {
   items: [],
   isLoading: false,
   isError: false,
-  page: 1
+  page: 0
 }
 
 export const counterSlice = createSlice({
@@ -64,6 +64,7 @@ export const counterSlice = createSlice({
       state.items = action.payload
       state.isLoading = true
       state.isError = false
+      state.page = 0
     },
     [fetchNft.rejected.type]: (state, action) => {
       state.items = action.payload

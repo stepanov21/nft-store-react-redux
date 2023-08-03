@@ -15,7 +15,6 @@ const CartPage: React.FC = () => {
     <>
       {cartItems.length > 0 ? (
         <>
-          {" "}
           <div className={style.header}>
             <h1>Cart</h1>
             <div

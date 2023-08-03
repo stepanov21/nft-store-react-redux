@@ -23,6 +23,7 @@ body {
   background-image: url(../public/bg.png);
   background-size: cover;
   color: white;
+  min-height: 105vh;
 }
 
 code {
@@ -38,7 +39,7 @@ code {
 
 h1  {
   font-weight: 700;
-  font-size: 128px;
+  font-size: 112px;
   line-height: 20px;
   color: white;
 }
