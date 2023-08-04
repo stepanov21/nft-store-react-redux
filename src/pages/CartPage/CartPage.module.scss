@@ -17,6 +17,7 @@
 .total_wrapper {
   display: flex;
   margin-top: 54px;
+  flex-direction: column;
   span {
     font-size: 24px;
   }
@@ -28,6 +29,10 @@
   }
   .total {
     margin-left: auto;
+    @media (max-width: 705px) {
+      margin-left: 0;
+      margin-top: 16px;
+    }
     span {
       color: var(--primary-color);
       font-weight: bold;
