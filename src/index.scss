@@ -24,6 +24,8 @@ body {
   background-size: cover;
   color: white;
   min-height: 105vh;
+  position: relative;
+  padding-top: 33px;
 }
 
 code {
@@ -39,10 +41,39 @@ code {
 
 h1  {
   font-weight: 700;
-  font-size: 112px;
+  font-size: 8vw;
   line-height: 20px;
   color: white;
 }
 button .active-page {
   border: 3px solid var(--primary-color);
+}
+
+.mobileMenuBg {
+  position: absolute;
+  padding: 40px 60px;
+  border-radius: 10px;
+  top: 80px;
+  right: 0;
+  background: radial-gradient(
+    62.71% 76.27% at -10.1% -10.48%,
+    #323232 0%,
+    #262828 100%
+  ),
+  #d9d9d9;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 60px;
+  a {
+    color: white;
+    z-index: 10;
+    text-decoration: none;
+
+  }
+}
+
+.menu-btn {
+  margin-left: auto;
 }

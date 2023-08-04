@@ -1,7 +1,6 @@
 import React, { memo, useEffect, useRef, useState } from "react"
 import { useSelector } from "react-redux"
 import {
-  IFilter,
   selectFilter,
   setFilter,
   TFilterValues,
@@ -23,7 +22,6 @@ const Filter: React.FC = () => {
   useEffect(() => {
     const closeOut = (e: MouseEvent) => {
       if (filterRef.current && !e.composedPath().includes(filterRef.current)) {
-        console.log(e)
         setOpen(false)
       }
     }

@@ -2,9 +2,16 @@
   display: flex;
   align-items: center;
   position: relative;
+  @media (max-width: 700px) {
+    width: 100%;
+    margin-top: 32px;
+  }
   svg {
     cursor: pointer;
     transition: all .8s ease-in;
+    @media (max-width: 700px) {
+      margin-left: auto;
+    }
   }
   .filter {
     margin-left: 16px;
