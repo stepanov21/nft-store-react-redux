@@ -4,6 +4,9 @@
   position: relative;
   img {
     height: 68px;
+    @media (max-width: 705px) {
+      height: 38px;
+    }
   }
   ul {
     margin-left: auto;
@@ -11,7 +14,7 @@
     align-items: center;
     column-gap: 40px;
     list-style: none;
-    @media (max-width: 700px) {
+    @media (max-width: 705px) {
       display: none;
     }
     a {

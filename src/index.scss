@@ -50,6 +50,9 @@ button .active-page {
 }
 
 .mobileMenuBg {
+  @media (min-width: 705px) {
+    display: none;
+  }
   position: absolute;
   padding: 40px 60px;
   border-radius: 10px;
@@ -75,5 +78,9 @@ button .active-page {
 }
 
 .menu-btn {
+  @media (min-width: 705px) {
+    display: none;
+  }
   margin-left: auto;
+  padding-bottom: 5px;
 }

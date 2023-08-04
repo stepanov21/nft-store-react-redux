@@ -23,7 +23,7 @@ const Header: React.FC = () => {
   let activeClassName = { color: "var(--primary-color)" }
   const { items } = useSelector(cartSelector)
 
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
   const isActiveLink = ({ isActive }: { isActive: boolean }) =>
