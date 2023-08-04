@@ -3,3 +3,4 @@ declare module "*.scss" {
   export default styles;
 }
 declare module 'react-tilt'
+declare module 'lodash.debounce'

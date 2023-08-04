@@ -2,6 +2,7 @@ import React, { memo, useRef, useState } from "react"
 import { clearSearchValue, setSearchValue } from "../../redux/slice/searchSlice"
 import { useAppDispatch } from "../../redux/store"
 import style from "./Search.module.scss"
+import debounce from "lodash.debounce"
 
 const Search: React.FC = () => {
   const [input, setInput] = useState("")
@@ -9,9 +10,17 @@ const Search: React.FC = () => {
 
   const dispatch = useAppDispatch()
 
-  const changeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeControl = debounce((e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setSearchValue(e.target.value))
+  }, 2000)
+
+  const changeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value)
+  }
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    changeControl(e)
+    changeInput(e)
   }
 
   const clearInputAndFocus = () => {
@@ -25,7 +34,7 @@ const Search: React.FC = () => {
       <input
         ref={inputRef}
         value={input}
-        onChange={e => changeInput(e)}
+        onChange={e => handleInput(e)}
         type='text'
         placeholder='Find something...'
         maxLength={15}

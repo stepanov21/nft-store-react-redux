@@ -46,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "@types/lodash.debounce": "^4.0.7",
     "axios": "^1.2.5"
   }
 }
